@@ -120,11 +120,49 @@
 </head>
 <body>
 
-    <div class="lantern" style="left: 5%; animation-delay: 0s;">S<br>U<br>N</div>
-    <div class="lantern" style="left: 25%; animation-delay: 5s;">S<br>U<br>N</div>
-    <div class="lantern" style="left: 45%; animation-delay: 10s;">S<br>U<br>N</div>
-    <div class="lantern" style="left: 70%; animation-delay: 2s;">S<br>U<br>N</div>
-    <div class="lantern" style="left: 90%; animation-delay: 7s;">S<br>U<br>N</div>
+    <div class="lantern" style="left: 5%; animation-delay: 0s;">
+    <span class="lantern-text">S<br>U<br>N</span>
+    <span class="secret-msg">I Love You</span>
+</div>
+<div class="lantern" style="left: 25%; animation-delay: 5s;">
+    <span class="lantern-text">S<br>U<br>N</span>
+    <span class="secret-msg">My Everything</span>
+</div>
+<div class="lantern" style="left: 45%; animation-delay: 10s;">
+    <span class="lantern-text">S<br>U<br>N</span>
+    <span class="secret-msg">Forever</span>
+</div>
+<div class="lantern" style="left: 70%; animation-delay: 2s;">
+    <span class="lantern-text">S<br>U<br>N</span>
+    <span class="secret-msg">Better Together</span>
+</div>
+<div class="lantern" style="left: 90%; animation-delay: 7s;">
+    <span class="lantern-text">S<br>U<br>N</span>
+    <span class="secret-msg">Greece 2025</span>
+</div>
+    /* Hide the secret message by default */
+.secret-msg {
+    display: none;
+    font-size: 12px;
+    color: #fff;
+    text-shadow: 0 0 5px #ffcc00;
+}
+
+/* When hovering over the lantern... */
+.lantern:hover .lantern-text {
+    display: none; /* Hide 'SUN' */
+}
+
+.lantern:hover .secret-msg {
+    display: block; /* Show the secret message */
+}
+
+.lantern:hover {
+    transform: scale(1.5); /* Make the lantern bigger when hovered */
+    cursor: pointer;
+    background-color: #ff1a1a; /* Make it glow brighter */
+    transition: 0.3s;
+}
 
     <audio id="mySong" loop>
     <source src="song.mp3" type="audio/mpeg">
