@@ -117,6 +117,38 @@
         #yesBtn { background-color: #ff4d4d; color: white; box-shadow: 0 4px 15px rgba(255, 77, 77, 0.4); }
         #noBtn { background-color: #999; color: white; position: absolute; }
     </style>
+    .secret-msg {
+            display: none;
+            font-size: 11px;
+            color: #fff;
+            text-shadow: 0 0 5px #ffcc00;
+            padding: 5px;
+            animation: fadeIn 0.5s;
+        }
+
+        /* This hides 'SUN' and shows your secret message when hovered */
+        .lantern:hover .lantern-text {
+            display: none; 
+        }
+
+        .lantern:hover .secret-msg {
+            display: block; 
+        }
+
+        .lantern:hover {
+            transform: scale(1.6) translateY(-20px); /* Makes it pop out */
+            cursor: pointer;
+            background-color: #ff1a1a;
+            transition: 0.3s;
+            z-index: 1000;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+    </style> ```
 </head>
 <body>
 
@@ -140,30 +172,6 @@
     <span class="lantern-text">S<br>U<br>N</span>
     <span class="secret-msg">Greece 2025</span>
 </div>
-    /* Hide the secret message by default */
-.secret-msg {
-    display: none;
-    font-size: 12px;
-    color: #fff;
-    text-shadow: 0 0 5px #ffcc00;
-}
-
-/* When hovering over the lantern... */
-.lantern:hover .lantern-text {
-    display: none; /* Hide 'SUN' */
-}
-
-.lantern:hover .secret-msg {
-    display: block; /* Show the secret message */
-}
-
-.lantern:hover {
-    transform: scale(1.5); /* Make the lantern bigger when hovered */
-    cursor: pointer;
-    background-color: #ff1a1a; /* Make it glow brighter */
-    transition: 0.3s;
-}
-
     <audio id="mySong" loop>
     <source src="song.mp3" type="audio/mpeg">
 </audio>
