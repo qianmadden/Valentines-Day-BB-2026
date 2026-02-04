@@ -210,11 +210,48 @@
 
         // --- Celebration Logic ---
         function celebrate() {
-            document.getElementById('main-content').innerHTML = `
-                <div style="margin-top: 50px;">
-                    <h1 style="font-size: 50px; color: #ff4d4d;">YES! 🥰🌹</h1>
-                    <p style="font-size: 20px;">I'll see you on the 14th!</p>
-                    <div style="font-size: 100px;">🎉💖🥂</div>
+    // 1. Swell the music!
+    const song = document.getElementById("mySong");
+    song.volume = 0.5; // Start at half volume
+    song.play();
+
+    // 2. Initial Confetti Blast (Center)
+    confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#ff4d4d', '#ffcc00', '#ffffff']
+    });
+
+    // 3. Side Cannons (0.5s later)
+    setTimeout(() => {
+        confetti({
+            particleCount: 100,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 }
+        });
+        confetti({
+            particleCount: 100,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 }
+        });
+    }, 500);
+
+    // 4. Update the screen with your personalized message
+    document.getElementById('main-content').innerHTML = `
+        <div style="margin-top: 50px; animation: fadeIn 2s;">
+            <h1 style="font-size: 60px; color: #ff4d4d; margin-bottom: 20px;">YES! 🥰🌹</h1>
+            <p style="font-size: 22px; line-height: 1.6; max-width: 600px; margin: 0 auto;">
+                From the sunsets in <b>Marseille</b> to the magic of <b>Florence</b>,<br>
+                every adventure is better with you by my side.
+            </p>
+            <h2 style="color: #d63384; margin-top: 30px;">See you on the 14th!</h2>
+            <div style="font-size: 80px; margin-top: 20px;">🎉💖🥂</div>
+        </div>
+    `;
+}
                 </div>
             <div class="photo-slot">
                 <img src="vday.jpeg" alt="Memory 5">
