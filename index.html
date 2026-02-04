@@ -127,13 +127,17 @@
     <div class="lantern" style="left: 90%; animation-delay: 7s;">S<br>U<br>N</div>
 
     <audio id="mySong" loop>
-        <source src="song.mp3" type="audio/mpeg">
-    </audio>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
 
-    <div id="music-container" onclick="toggleMusic()">
-        <span id="music-icon">🎵</span>
-        <span id="music-text">Play Music</span>
-    </div>
+<div id="music-container" onclick="toggleMusic()" 
+     style="position: fixed; top: 20px; right: 20px; background: white; padding: 12px 20px; 
+            border-radius: 30px; display: flex; align-items: center; cursor: pointer; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 9999; font-weight: bold; 
+            color: #ff4d4d; border: 2px solid #ff4d4d;">
+    <span style="margin-right: 8px; font-size: 20px;">🎵</span>
+    <span id="music-text">Play Music</span>
+</div>
     <div id="main-content">
         <h1>Counting down to loving you extra from your 贴心小宝贝...</h1>
         <div id="timer">Loading timer...</div>
